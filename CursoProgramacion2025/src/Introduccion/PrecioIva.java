@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class PrecioIva {
     public static void main(String[] args) {
         int iva = 21;
-        double precio = 0;
-        double pvpFinal = 0;
+        double precio;
+        double pvpFinal;
 
         Scanner sc = new Scanner(System.in);
 
