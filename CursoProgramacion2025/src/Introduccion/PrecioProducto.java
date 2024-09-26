@@ -19,9 +19,9 @@ public class PrecioProducto {
         System.out.println("Que cantidad quieres comprar? ");
         cantidadProducto = sc.nextInt();
 
-        pvpFinal = (precio + ((precio * iva)/100)) * cantidadProducto;
+        pvpFinal = (precio + (precio * iva)/100) * cantidadProducto;
 
-        System.out.println("Total a pagar (IVA incl): " + pvpFinal);
+        System.out.printf("Total a pagar (IVA incl): %.2f€", pvpFinal);
 
     }
 }
