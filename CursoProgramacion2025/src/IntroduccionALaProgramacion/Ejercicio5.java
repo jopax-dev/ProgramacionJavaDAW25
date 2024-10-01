@@ -31,12 +31,14 @@ public class Ejercicio5 {
 //    System.out.println(adivina);
 //      ** No compilaria, daria error porque a == 97, pero un int, en este caso 97, no puede compararse con un booleano **
 
-//    boolean adivina=(97==’a’==true);
+//    boolean adivina=(97=='a'==97);
 //    System.out.println(adivina);
+//      ** No compilaria, primero hace la comprobacion de si 97 es igual a 'a', en este caso, al hacer el casting,
+//      seria verdadero. Luego compara true con un int (97 en este caso), lo cual no se puede hacer y da fallo. **
 
-    public static void main(String[] args) {
-        boolean adivina=(97=='a'==true);
-        System.out.println(adivina);
-    }
+//    boolean adivina=(97=='a'==true);
+//    System.out.println(adivina)
+//      ** En este caso, a diferencia del anterior, si compila y mostraria true, ya que primero hace la conversion,
+//      al igual que antes, da true, y true si se puede comparar con otro booleano, en este caso true. **
 
 }
