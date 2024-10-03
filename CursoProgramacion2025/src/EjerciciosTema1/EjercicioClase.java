@@ -34,6 +34,7 @@ public class EjercicioClase {
         System.out.println("Escribe la nota del trabajo final: ");
         notaTrabajoFinal = sc.nextDouble();
         notaTrabajoFinal = notaTrabajoFinal * (porcentTrabajo /100);
+
         System.out.println("Nota final: " + (notaParciales + notaExamenFinal + notaTrabajoFinal));
     }
 }
