@@ -17,7 +17,7 @@ public class EjercicioSuma {
         numero2 = sc.nextDouble();
 
         suma = numero1 + numero2;
-        System.out.printf("La suma de %f y %f es %f", numero1, numero2, suma);
+        System.out.printf("La suma de %.3f y %.3f es %.3f", numero1, numero2, suma);
 
         sc.close();
     }
