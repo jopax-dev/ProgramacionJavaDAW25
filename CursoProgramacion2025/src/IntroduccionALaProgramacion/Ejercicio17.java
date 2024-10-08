@@ -20,7 +20,7 @@ public class Ejercicio17 {
         int b = (int) (Math.random() * 25) * 2;
         System.out.println("B) " + b);
 
-        int c = (int) ((Math.random() * 10) + 1);
+        double c = (Math.random() * 10) + 1;
         System.out.println("C) " + c);
 
         int d = (int) (Math.random() * (-49 + 150 )) - 150;
@@ -29,11 +29,11 @@ public class Ejercicio17 {
         int e = (int) (Math.random() * (99 + 100 )) - 100;
         System.out.println("E) " + e);
 
-        int[]numeros = {5,7,33,125,77};
+        int[] numeros = {5,7,33,125,77};
         int indice = (int) (Math.random() * 5);
         System.out.println("F) " + numeros[indice]);
 
-        String[]meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
                 "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
         int indiceMes = (int) (Math.random() * 12);
         System.out.println("G) " + meses[indiceMes]);

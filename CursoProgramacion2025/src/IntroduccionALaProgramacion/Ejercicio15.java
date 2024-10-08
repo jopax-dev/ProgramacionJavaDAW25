@@ -9,7 +9,7 @@ public class Ejercicio15 {
      */
 
     public static void main(String[] args) {
-        double plazo = 0.025, hacienda = 0.18, capital = 2000;
+        double plazo = 0.0275, hacienda = 0.18, capital = 2000;
         double beneficio;
 
         beneficio = (capital * plazo) / 2;
