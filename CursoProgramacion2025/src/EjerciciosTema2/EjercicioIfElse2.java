@@ -6,7 +6,7 @@ public class EjercicioIfElse2 {
     /*
         // VidaJugador = 0-100
         // VidaMonstruo = 0-50
-        // PuntosEspada = 0-50
+        // PuntosEspada = 0-60
         // RunaMagica = true/false
 
         // Es un combate entre el jugador y el monstruo.
@@ -41,11 +41,11 @@ public class EjercicioIfElse2 {
             System.out.println("Vida incorrecta, introduce un valor entre [0 - 100]");
         } else if (!(vidaMonstruo >= 0 && vidaMonstruo <= 50)){
             System.out.println("Vida del monstruo incorrecta, introduce un valor entre [0 - 50]");
-        } else if (!(puntosEspada >= 0 && puntosEspada <= 50)) {
-            System.out.println("Puntos de espada incorrectos, introduce un valor entre [0 - 50]");
-        } else {
+        } else if (!(puntosEspada >= 0 && puntosEspada <= 60)) {
+            System.out.println("Puntos de espada incorrectos, introduce un valor entre [0 - 60]");
+        }else{
             if ((vidaJugador > 50 && puntosEspada > 30)
-                    || (vidaJugador < 50 && puntosEspada >= 50)
+                    || (vidaJugador < 50 && puntosEspada > 50)
                     || (vidaJugador < 50 && puntosEspada < 30 && runaMagica)) {
                 System.out.println("El jugador gana");
             } else {

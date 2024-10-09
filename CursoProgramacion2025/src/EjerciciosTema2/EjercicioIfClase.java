@@ -29,24 +29,24 @@ public class EjercicioIfClase {
         System.out.println("Cual es tu nivel? ");
         nivel = sc.nextInt();
 
-        if (hora >= 6 && hora < 12){
+        if (hora >= 6 && hora <= 12){
             saludo = "Buenos dias ";
-        } else if ( hora >= 12 && hora < 20) {
+        } else if ( hora > 12 && hora < 20) {
             saludo = "Buenas tardes ";
         } else{
             saludo = "Buenas noches ";
         }
 
         if (nivel == 1){
-            saludo += "iniciado";
+            saludo += "jugador de nivel iniciado";
         } else if (nivel == 2) {
-            saludo += "amateur";
+            saludo += "jugador de nivel amateur";
         } else if (nivel == 3) {
-            saludo += "profesional";
+            saludo += "jugador de nivel profesional";
         } else if (nivel == 4) {
-            saludo += "experto";
+            saludo += "jugador de nivel experto";
         } else{
-            saludo += "dios";
+            saludo += "jugador de nivel dios";
         }
 
         System.out.println(saludo);
