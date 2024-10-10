@@ -23,8 +23,8 @@ public class Ejercicio9 {
             ************************
             ** Haciendolo con ifs **
             * **********************
-
          */
+
         if (mes == 1){
             System.out.println("Enero tiene 31 dias");
         } else if (mes == 2) {
@@ -51,6 +51,26 @@ public class Ejercicio9 {
             System.out.println("Diciembre tiene 31 dias");
         } else {
             System.out.println("No existe un numero del 1 al 12");
+        }
+
+        /*
+         ************************
+         ** Haciendolo con switch **
+         * **********************
+         */
+
+        switch (mes) {
+            case 2:
+                System.out.println("Tiene 28 dias");
+                break;
+            case 1,3,5,7,8,10,12:
+                System.out.println("Tiene 31 dias");
+                break;
+            case 4,6,9,11:
+                System.out.println("Tiene 30 dias");
+                break;
+            default:
+                System.out.println("Mes incorrecto");
         }
     }
 }

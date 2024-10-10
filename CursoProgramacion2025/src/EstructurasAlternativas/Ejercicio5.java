@@ -15,7 +15,7 @@ public class Ejercicio5 {
         System.out.println("Introduce un año: ");
         int year = sc.nextInt();
 
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
             System.out.println("El año es bisiesto");
         } else {
             System.out.println("El año no es bisiesto");
