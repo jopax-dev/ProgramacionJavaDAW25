@@ -1,6 +1,4 @@
-package EjerciciosTema2;
-
-import java.util.Scanner;
+package EjerciciosTema2.IfSwitch;
 
 public class EjemplosIf {
 

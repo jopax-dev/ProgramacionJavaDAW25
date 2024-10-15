@@ -1,4 +1,4 @@
-package EjerciciosTema2;
+package EjerciciosTema2.IfSwitch;
 
 public class EjemplosIf3 {
     public static void main(String[] args) {

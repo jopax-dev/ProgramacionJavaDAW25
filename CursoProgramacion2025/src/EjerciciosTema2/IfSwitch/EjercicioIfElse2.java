@@ -1,4 +1,4 @@
-package EjerciciosTema2;
+package EjerciciosTema2.IfSwitch;
 
 import java.util.Scanner;
 
