@@ -24,14 +24,19 @@ public class EjercicioWhile {
 
         // Simula tirar un dado de 20 caras, hasta que salga el 1 o el 20
 
-        int dado, tiradas = 0;
-        do {
-            dado = (int) (Math.random() * 20 + 1);
-            tiradas++;
-        } while (dado != 1 && dado != 20);
+//        int dado, tiradas = 0;
+//        do {
+//            dado = (int) (Math.random() * 20 + 1);
+//            tiradas++;
+//        } while (dado != 1 && dado != 20);
+//
+//
+//        String mensaje = dado == 1 ? "Fallo catastrofico ( 1d20 )" : "Tirada perfecta ( 20d20 )";
+//        System.out.printf("%s en %d tiradas", mensaje, tiradas);
+//
+//
 
-        String mensaje = dado == 1 ? "Fallo catastrofico ( 1d20 )" : "Tirada perfecta ( 20d20 )";
-        System.out.printf("%s en %d tiradas", mensaje, tiradas);
+
+
     }
-
 }
