@@ -10,7 +10,7 @@ public class CubitusHumerus1 {
      */
 
     public static void main(String[] args) {
-        int dado1, dado2, mayor;
+        int dado1, dado2;
         boolean gana1 = false, gana2 = false;
 
         dado1 = (int) (Math.random() * 20 + 1);
