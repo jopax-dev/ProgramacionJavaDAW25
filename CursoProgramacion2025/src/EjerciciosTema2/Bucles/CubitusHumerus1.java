@@ -7,42 +7,52 @@ public class CubitusHumerus1 {
             - Cada uno tira un d20
             - Gana el que saca el dado mayor, o si alguno de ellos saca el 9
             - Juega 1 partida y dime quien gana
+            - Si juegan 10 partidas di quien gana de los 2
      */
 
     public static void main(String[] args) {
-        int dado1, dado2;
+        int dado1, dado2, vicotriasC = 0, victoriasH = 0;
         boolean gana1 = false, gana2 = false;
+        int numPartidas = 10;
 
-        dado1 = (int) (Math.random() * 20 + 1);
-        dado2 = (int) (Math.random() * 20 + 1);
+        for (int i = 1; i <= numPartidas ; i++) {
+            dado1 = (int) (Math.random() * 20 + 1);
+            dado2 = (int) (Math.random() * 20 + 1);
 
-        if ( dado1 == 9){
-            gana1 = true;
-        }
-
-        if (dado2 == 9) {
-            gana2 = true;
-        }
-
-        if(!gana1 && !gana2){
-            if(dado1 > dado2){
-                System.out.printf("Gana Cubitus, %d > %d", dado1, dado2);
-            } else if (dado2 > dado1) {
-                System.out.printf("Gana Humerus, %d > %d", dado2, dado1);
-            } else {
-                System.out.println("EMPATE con "+ dado1);
+            if ( dado1 == 9){
+                gana1 = true;
             }
+
+            if (dado2 == 9) {
+                gana2 = true;
+            }
+
+            if(!gana1 && !gana2){
+                if(dado1 > dado2){
+                    vicotriasC++;
+                } else if (dado2 > dado1) {
+                    victoriasH++;
+                }
+            } else {
+                if(gana1 && !gana2){
+                    vicotriasC++;
+                } else {
+                    victoriasH++;
+                }
+            }
+        }
+
+        System.out.printf("""
+                Victorias Cubitus: %d
+                Victorias Humerus: %d
+                """, vicotriasC, victoriasH);
+        if(vicotriasC > victoriasH){
+            System.out.println("Gana Cubitus");
+        } else if (vicotriasC < victoriasH) {
+            System.out.println("Gana Humerus");
         } else {
-            if(gana1 && gana2) {
-                System.out.println("Los 2 han sacado 9!!");
-            }
-            if(gana1){
-                System.out.println("Cubitus ha sacado un 9");
-            } else {
-                System.out.println("Humerus ha sacado un 9");
-            }
-
-
+            System.out.println("Empate!!");
         }
+
     }
 }
