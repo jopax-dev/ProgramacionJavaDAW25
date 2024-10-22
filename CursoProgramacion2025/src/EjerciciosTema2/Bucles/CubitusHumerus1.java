@@ -12,10 +12,13 @@ public class CubitusHumerus1 {
 
     public static void main(String[] args) {
         int dado1, dado2, vicotriasC = 0, victoriasH = 0;
-        boolean gana1 = false, gana2 = false;
+        boolean gana1, gana2;
         int numPartidas = 10;
 
         for (int i = 1; i <= numPartidas ; i++) {
+            gana1 = false;
+            gana2 = false;
+
             dado1 = (int) (Math.random() * 20 + 1);
             dado2 = (int) (Math.random() * 20 + 1);
 
