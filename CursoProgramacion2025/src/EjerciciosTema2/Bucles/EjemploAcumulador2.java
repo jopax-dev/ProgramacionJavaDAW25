@@ -4,7 +4,7 @@ public class EjemploAcumulador2 {
     public static void main(String[] args) {
 
         // Genera 100 numeros aleatorios entre 1 y 100
-        // Muesra la suma de los pares y la suma de los impares
+        // Muestra la suma de los pares y la suma de los impares
 
         int par = 0, impar = 0;
 
