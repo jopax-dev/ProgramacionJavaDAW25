@@ -3,7 +3,7 @@ package EjerciciosTema2.Bucles;
 public class CubitusHumerus2 {
     /*
         Nuestros 2 romanos juegan a los dados
-            - Cada uno tira 2 dados
+            - Cada uno tira 2d20
             - Gana el que la suma de dados sea mayor
             - O gana automaticamente el que saque 2 dados iguales
             - Juega 20 rondas
@@ -42,6 +42,7 @@ public class CubitusHumerus2 {
                 } else {
                     empates++;
                 }
+
             } else {
                 if(dobleCubitus && dobleHumerus){
                     empates++;
@@ -51,6 +52,14 @@ public class CubitusHumerus2 {
                     victoriasC++;
                 }
             }
+            System.out.printf("""
+                        
+                        ####### RONDA %d #######
+                        Tirada Humerus: %d - %d
+                        Tirada Cubitus: %d - %d
+                        ######## Fin Ronda ######
+                        
+                        """,i, dado1H, dado2H, dado1C, dado2C);
         }
         System.out.printf("""
                 
