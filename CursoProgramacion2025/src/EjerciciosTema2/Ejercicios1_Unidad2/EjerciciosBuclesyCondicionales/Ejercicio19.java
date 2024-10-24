@@ -4,33 +4,34 @@ import java.util.Scanner;
 
 public class Ejercicio19 {
     /*
-        Programa que, dado un número entero positivo introducido por teclado, visualice por pantalla todos los
-        números primos menores que él. Utiliza la función del ejercicio anterior
+        Diseña un metodo que indique si un número entero pasado como parámetro es o no un número primo
+        (devuelve un boolean). Un número primo es aquel que tiene por divisores el 1 y el propio número,
+        únicamente.
      */
 
-    public static String esPrimo(double numero){
-        String primos = "";
+    public static boolean esPrimo(double numero){
         boolean primo = true;
 
-        for (double i = 1; i < numero; i++) {
-            primo = true;
-            for (double j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    primo = false;
-                    break;
-                }
-
+        for (double i = 2; i < numero; i++) {
+            if (numero % i == 0) {
+                primo = false;
+                break;
             }
-            if(primo) { primos += i + ", ";}
         }
-        return primos;
+        return primo;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double numero;
-        System.out.print("Escribe un numero: ");
+
+        System.out.println("Ingrese un numero: ");
         numero = Double.parseDouble(sc.nextLine());
-        System.out.printf("\nLos primos menores de %.0f son: %s", numero, esPrimo(numero));
+
+        if(esPrimo(numero)){
+            System.out.printf("\n%.0f es primo",numero);
+        } else {
+            System.out.printf("\n%.0f no es primo",numero);
+        }
     }
+
 }

@@ -10,18 +10,31 @@ public class Ejercicio14 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num1, num2, numPares = 0;
-        System.out.println("Escribe el 1er numero");
-        num1 = sc.nextInt();
-        System.out.println("Escribe el 2er numero");
-        num2 = sc.nextInt();
 
-        for (int i = num1; i <= num2; i++) {
-            if(i % 2 == 0){
-                numPares++;
-                System.out.println(i);
+        try {
+
+            int num1, num2, temp,  numPares = 0;
+            System.out.println("Escribe el 1er numero");
+            num1 = sc.nextInt();
+            System.out.println("Escribe el 2er numero");
+            num2 = sc.nextInt();
+
+            if(num1 < 1 || num2 < 1) throw new Exception("Los numeros tienen que ser positivos");
+
+            if( num2 > num1){
+                temp = num1;
+                num1 = num2;
+                num2 = temp;
             }
+            for (int i = num1; i <= num2; i++) {
+                if (i % 2 == 0) {
+                    numPares++;
+                    System.out.println(i);
+                }
+            }
+            System.out.println("Total de numeros pares: " + numPares);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
         }
-        System.out.println("Total de numeros pares: " + numPares);
     }
 }

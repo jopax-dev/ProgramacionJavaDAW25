@@ -8,24 +8,17 @@ public class Ejercicio1 {
 
     public static int mayor(int a, int b, int c) {
 
-       /*
-        Se podría hacer con un Math.max(num 1, Math.max(num 2, num 3))
-        */
-
-        int mayor;
-
         if( a >= b){
-            mayor = a;
+            return a;
         } else if (b >= c) {
-            mayor = b;
+            return b;
         } else {
-            mayor = c;
+            return c;
         }
-        return mayor;
     }
 
-    public static int mayor(int a, int b){
-        return mayor(a,b,0);
+    public static int mayor(int a, int b, int c, int d){
+        return mayor(mayor(a, b, 0), mayor(b, c, d), 0);
     }
 
     public static void main(String[] args) {
@@ -34,8 +27,7 @@ public class Ejercicio1 {
         int num3 = 8;
         int num4 = 7;
 
-        int numMayor = mayor(num1, num2, num3);
-        numMayor = mayor(numMayor, num4);
+        int numMayor = mayor(num1, num2, num3, num4);
 
         System.out.printf("El mayor de %d, %d, %d y %d es %d", num1, num2, num3, num4, numMayor);
     }

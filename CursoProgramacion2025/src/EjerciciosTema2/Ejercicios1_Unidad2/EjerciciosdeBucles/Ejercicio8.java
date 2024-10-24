@@ -9,11 +9,21 @@ public class Ejercicio8 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Escribe un numero del 1 al 10");
-        int num = sc.nextInt();
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.printf("%d x %d = %d\n", num, i, num*i);
+        try {
+            System.out.println("Escribe un numero del 1 al 10");
+            int num = sc.nextInt();
+
+            if(num > 10 || num < 1) throw new Exception("Numero no valido");
+
+            for (int i = 1; i <= 10; i++) {
+                System.out.printf("%d x %d = %d\n", num, i, num*i);
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());;
+
         }
+
+
     }
 }
