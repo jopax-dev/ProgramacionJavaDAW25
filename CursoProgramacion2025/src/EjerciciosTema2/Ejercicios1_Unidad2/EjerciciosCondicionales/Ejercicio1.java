@@ -18,7 +18,7 @@ public class Ejercicio1 {
     }
 
     public static int mayor(int a, int b, int c, int d){
-        return mayor(mayor(a, b, 0), mayor(b, c, d), 0);
+        return mayor(mayor(a, b, a), mayor(c, d, d), a);
     }
 
     public static void main(String[] args) {

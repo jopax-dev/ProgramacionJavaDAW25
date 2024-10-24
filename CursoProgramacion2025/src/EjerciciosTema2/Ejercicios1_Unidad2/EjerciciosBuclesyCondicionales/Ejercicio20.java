@@ -8,29 +8,30 @@ public class Ejercicio20 {
         números primos menores que él. Utiliza la función del ejercicio anterior
      */
 
-    public static String esPrimo(double numero){
+    public static String esPrimo(int numero){
         String primos = "";
         boolean primo = true;
 
-        for (double i = 1; i < numero; i++) {
+
+        for (int i = 1; i < numero; i++) {
             primo = true;
-            for (double j = 2; j < i; j++) {
+            for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
                     primo = false;
                     break;
                 }
 
             }
-            if(primo) { primos += i + ", ";}
+            if(primo) primos += i + ", ";
         }
         return primos;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double numero;
+        int numero;
         System.out.print("Escribe un numero: ");
-        numero = Double.parseDouble(sc.nextLine());
-        System.out.printf("\nLos primos menores de %.0f son: %s", numero, esPrimo(numero));
+        numero = Integer.parseInt(sc.nextLine());
+        System.out.printf("\nLos primos menores de %d son: %s", numero, esPrimo(numero));
     }
 }

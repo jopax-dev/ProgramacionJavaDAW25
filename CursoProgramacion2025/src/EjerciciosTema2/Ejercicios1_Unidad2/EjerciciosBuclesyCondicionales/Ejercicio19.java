@@ -9,28 +9,27 @@ public class Ejercicio19 {
         únicamente.
      */
 
-    public static boolean esPrimo(double numero){
-        boolean primo = true;
+    public static boolean esPrimo(int numero){
 
-        for (double i = 2; i < numero; i++) {
+        for (int i = 2; i < numero; i++) {
             if (numero % i == 0) {
-                primo = false;
-                break;
+                return false;
             }
         }
-        return primo;
+        return true;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double numero;
+        int numero;
 
         System.out.println("Ingrese un numero: ");
-        numero = Double.parseDouble(sc.nextLine());
+        numero = Integer.parseInt(sc.nextLine());
 
         if(esPrimo(numero)){
-            System.out.printf("\n%.0f es primo",numero);
+            System.out.printf("\n%d es primo",numero);
         } else {
-            System.out.printf("\n%.0f no es primo",numero);
+            System.out.printf("\n%d no es primo",numero);
         }
     }
 
