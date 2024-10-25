@@ -1,4 +1,4 @@
-package EjerciciosTema2.Excepciones;
+package EjerciciosTema2.Ejercicios1_Unidad2.EjerciciosControlDeExcepciones;
 
 import java.util.Scanner;
 
