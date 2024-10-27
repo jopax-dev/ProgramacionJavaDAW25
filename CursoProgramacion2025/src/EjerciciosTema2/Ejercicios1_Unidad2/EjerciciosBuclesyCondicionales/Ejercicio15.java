@@ -16,8 +16,10 @@ public class Ejercicio15 {
         while (num != 0) {
             System.out.println("Escribe un numero");
             num = sc.nextInt();
-            if (num > numMax) { numMax = num; }
-            if (num < numMin) { numMin = num; }
+            if(num != 0) {
+                if (num > numMax || numMax == 0) numMax = num;
+                if (num < numMin || numMin == 0) numMin = num;
+            }
         }
 
         System.out.printf("""
