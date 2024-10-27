@@ -26,7 +26,6 @@ public class Ejercicio26 {
 
         for (int i = 0; i < numCaracteres.length(); i++) {
             for (int j = 0; j < Character.getNumericValue(numCaracteres.charAt(i)); j++) {
-
                 System.out.print("|");
             }
 
