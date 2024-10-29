@@ -1,5 +1,7 @@
 package EjerciciosTema2.EjerciciosEquipo;
 
+import java.util.Scanner;
+
 public class Ejercicio2 {
     /*
         Marcus Cubitus y Julius Humerus son dos legionarios que se entretienen en sus ratos
@@ -56,32 +58,73 @@ public class Ejercicio2 {
         return menor;
     }
 
+    public static int sumaTiradas(int tirada1,
+                                  int tirada2,
+                                  int tirada3,
+                                  int tirada4,
+                                  int tirada5){
+        int total = 0;
+        int mayor = maximoTirada(tirada1, tirada2, tirada3, tirada4, tirada5);
+        int menor = minimoTiradas(tirada1, tirada2, tirada3, tirada4, tirada5);
+
+        if(tirada1 != mayor && tirada1 != menor){
+            total += tirada1;
+        }
+        if(tirada2 != mayor && tirada2 != menor){
+            total += tirada2;
+        }
+        if(tirada3 != mayor && tirada3 != menor){
+            total += tirada3;
+        }
+        if(tirada4 != mayor && tirada4 != menor){
+            total += tirada4;
+        }
+        if(tirada5 != mayor && tirada5 != menor){
+            total += tirada5;
+        }
+        return total;
+    }
+
+    public static int tirada(){
+        int dado1 = tiradaDados();
+        int dado2 = tiradaDados();
+        int dado3 = tiradaDados();
+        int dado4 = tiradaDados();
+        int dado5 = tiradaDados();
+
+        return sumaTiradas(dado1, dado2, dado3, dado4, dado5);
+    }
+
     public static void main(String[] args) {
-        int dado1Cubitus = tiradaDados(); // 10
-        int dado2Cubitus = tiradaDados(); // 10
-        int dado3Cubitus = tiradaDados(); // 5
-        int dado4Cubitus = tiradaDados(); // 8
-        int dado5Cubitus = tiradaDados(); // 1
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cuantas rondas quieres jugar?");
+        int rondas = Integer.parseInt(sc.nextLine());
+        int victoriaCubitus = 0;
+        int victoriaHumerus = 0;
 
-        int dado1Humerus = tiradaDados(); // 13
-        int dado2Humerus = tiradaDados(); // 5
-        int dado3Humerus = tiradaDados(); // 1
-        int dado4Humerus = tiradaDados(); // 2
-        int dado5Humerus = tiradaDados(); // 9
+        for (int i = 1; i <= rondas; i++) {
+            int totalCubitus = tirada();
+            int totalHumerus = tirada();
 
-        int mayorCubitus = maximoTirada(dado1Cubitus, dado2Cubitus, dado3Cubitus, dado4Cubitus, dado5Cubitus);
-        int mayorHumerus = maximoTirada(dado1Humerus, dado2Humerus, dado3Humerus, dado4Humerus, dado5Humerus);
-        int menorCubitus = minimoTiradas(dado1Cubitus, dado2Cubitus, dado3Cubitus, dado4Cubitus, dado5Cubitus);
-        int menorHumerus = minimoTiradas(dado1Humerus, dado2Humerus, dado3Humerus, dado4Humerus, dado5Humerus);
+            System.out.println("Total cubitus: " + totalCubitus);
+            System.out.println("Total Humerus: " + totalHumerus);
 
-        System.out.printf("%d %d %d %d %d\n",dado1Cubitus, dado2Cubitus, dado3Cubitus, dado4Cubitus, dado5Cubitus);
-        System.out.println("Mayor cubitus " + mayorCubitus);
-        System.out.println("Menor cubitus " + menorCubitus);
-        System.out.println();
-        System.out.printf("%d %d %d %d %d\n",dado1Humerus, dado2Humerus, dado3Humerus, dado4Humerus, dado5Humerus);
-        System.out.println("Mayor humerus " + mayorHumerus);
-        System.out.println("Menor humerus " + menorHumerus);
+            if(totalCubitus > totalHumerus){
+                victoriaCubitus++;
+            } else if (totalCubitus < totalHumerus) {
+                victoriaHumerus++;
+            }
+        }
+        System.out.println("total victorias cubitus: " + victoriaCubitus);
+        System.out.println("total victorias humerus: " + victoriaHumerus);
 
+        if(victoriaCubitus > victoriaHumerus){
+            System.out.println("gana cubitus");
+        } else if (victoriaCubitus < victoriaHumerus) {
+            System.out.println("Gana humerus");
+        } else {
+            System.out.println("empate");
+        }
     }
 
 }
