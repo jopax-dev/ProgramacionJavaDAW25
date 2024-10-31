@@ -30,7 +30,7 @@ public class Ejercicio11 {
                 indice = Character.getNumericValue(iString.charAt(j));
                 num += (exponentes[indice]);
             }
-            System.out.println(num);
+            System.out.println(num + " => " + (int) Math.pow(base, i) );
         }
     }
 }
