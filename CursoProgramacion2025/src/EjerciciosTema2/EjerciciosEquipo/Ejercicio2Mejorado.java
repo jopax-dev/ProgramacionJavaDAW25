@@ -2,7 +2,7 @@ package EjerciciosTema2.EjerciciosEquipo;
 
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class Ejercicio2Mejorado {
     /*
         Marcus Cubitus y Julius Humerus son dos legionarios que se entretienen en sus ratos
         libres jugando a juegos de dados, el pasatiempo favorito de los antiguos romanos. Un
@@ -16,46 +16,34 @@ public class Ejercicio2 {
             - 5 dados
             - No cuentan mayores iguales ni menores iguales
             - Se suman el resto de dados
+
+        Mejoras:
+            - Control de errores
+            - Refactorizaciones (sin arrays)
      */
 
     public static int tiradaDados(){
         return (int) (Math.random() * 13 + 1);
     }
 
-    public static int maximoTirada(int tirada1, int tirada2, int tirada3, int tirada4, int tirada5){
-        int mayor = tirada1;
-
-        if (tirada2 > mayor){
-            mayor = tirada2;
-        }
-        if (tirada3 > mayor) {
-            mayor = tirada3;
-        }
-        if (tirada4 > mayor) {
-            mayor = tirada4;
-        }
-        if (tirada5 > mayor) {
-            mayor = tirada5;
-        }
-        return mayor;
+    public static int menor(int num1, int num2){
+        return num1 < num2 ? num1 : num2;
     }
 
-    public static int minimoTiradas(int tirada1, int tirada2, int tirada3, int tirada4, int tirada5){
-        int menor = tirada1;
+    public static int mayor(int num1, int num2){
+        return num1 > num2 ? num1 : num2;
+    }
 
-        if (tirada2 < menor){
-            menor = tirada2;
-        }
-        if (tirada3 < menor) {
-            menor = tirada3;
-        }
-        if (tirada4 < menor) {
-            menor = tirada4;
-        }
-        if (tirada5 < menor) {
-            menor = tirada5;
-        }
-        return menor;
+    public static int suma(int dado1, int dado2, int dado3, int dado4, int dado5, int mayor, int menor){
+        int total = 0;
+
+        if (dado1 != mayor && dado1 != menor) total += dado1;
+        if (dado2 != mayor && dado2 != menor) total += dado2;
+        if (dado3 != mayor && dado3 != menor) total += dado3;
+        if (dado4 != mayor && dado4 != menor) total += dado4;
+        if (dado5 != mayor && dado5 != menor) total += dado5;
+
+        return total;
     }
 
     public static int sumaTiradas(int tirada1,
@@ -63,26 +51,10 @@ public class Ejercicio2 {
                                   int tirada3,
                                   int tirada4,
                                   int tirada5){
-        int total = 0;
-        int mayor = maximoTirada(tirada1, tirada2, tirada3, tirada4, tirada5);
-        int menor = minimoTiradas(tirada1, tirada2, tirada3, tirada4, tirada5);
+        int mayor = mayor(mayor(tirada1,mayor(tirada2, tirada3) ), mayor(tirada4, tirada5));
+        int menor = menor(menor(tirada1, menor(tirada2, tirada3)), menor(tirada4, tirada5));
 
-        if(tirada1 != mayor && tirada1 != menor){
-            total += tirada1;
-        }
-        if(tirada2 != mayor && tirada2 != menor){
-            total += tirada2;
-        }
-        if(tirada3 != mayor && tirada3 != menor){
-            total += tirada3;
-        }
-        if(tirada4 != mayor && tirada4 != menor){
-            total += tirada4;
-        }
-        if(tirada5 != mayor && tirada5 != menor){
-            total += tirada5;
-        }
-        return total;
+        return suma(tirada1, tirada2, tirada3, tirada4, tirada5, mayor, menor);
     }
 
     public static int tirada(){
@@ -95,10 +67,31 @@ public class Ejercicio2 {
         return sumaTiradas(dado1, dado2, dado3, dado4, dado5);
     }
 
+    public static void ganador(int victoriasJ1, int victoriasJ2){
+        if(victoriasJ1 > victoriasJ2){
+            System.out.println("gana cubitus");
+        } else if (victoriasJ1 < victoriasJ2) {
+            System.out.println("Gana humerus");
+        } else {
+            System.out.println("empate");
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Cuantas rondas quieres jugar?");
-        int rondas = Integer.parseInt(sc.nextLine());
+        int rondas = 0;
+
+        while (rondas < 1) {
+            System.out.println("Cuantas rondas quieres jugar?");
+            try {
+                rondas = Integer.parseInt(sc.nextLine());
+                if(rondas < 1) System.out.println("Tienen que jugar minimo 1 ronda");
+            } catch (NumberFormatException e) {
+                System.out.println("Introduzca un numero");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         int victoriaCubitus = 0;
         int victoriaHumerus = 0;
 
@@ -115,16 +108,10 @@ public class Ejercicio2 {
                 victoriaHumerus++;
             }
         }
+
         System.out.println("total victorias cubitus: " + victoriaCubitus);
         System.out.println("total victorias humerus: " + victoriaHumerus);
 
-        if(victoriaCubitus > victoriaHumerus){
-            System.out.println("gana cubitus");
-        } else if (victoriaCubitus < victoriaHumerus) {
-            System.out.println("Gana humerus");
-        } else {
-            System.out.println("empate");
-        }
+        ganador(victoriaCubitus, victoriaHumerus);
     }
-
 }

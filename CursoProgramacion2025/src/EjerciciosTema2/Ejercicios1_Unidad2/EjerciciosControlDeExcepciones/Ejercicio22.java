@@ -17,11 +17,11 @@ public class Ejercicio22 {
             }
 
             String numString = Integer.toString(num);
-            int lenght = numString.length();
+            int length = numString.length();
             boolean capicua = true;
 
-            for (int i = 0; i < lenght; i++) {
-                if (numString.charAt(i) != numString.charAt(lenght - 1 - i)) {
+            for (int i = 0; i < length; i++) {
+                if (numString.charAt(i) != numString.charAt(length - 1 - i)) {
                     capicua = false;
                     break;
                 }
