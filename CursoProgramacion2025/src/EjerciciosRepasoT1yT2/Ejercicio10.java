@@ -38,7 +38,7 @@ public class Ejercicio10 {
 
             System.out.printf("""
                        %s   %s
-                    """,(String) nApuesta, resultado);
+                    """, nApuesta, resultado);
         }
     }
 }
