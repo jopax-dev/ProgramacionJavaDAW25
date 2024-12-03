@@ -66,7 +66,7 @@ public class Ejercicio19 {
      * @return
      */
     static int[] initializeStack(int arr[]){
-        return arr = new int[arr.length];
+        return new int[arr.length];
     }
 
     static int menu(){
